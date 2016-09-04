@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en"ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Inform Manage</title>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body >
+	<div class="navbar navbar-inverse">
+		<p class="navbar-brand">欢迎来到信息学生管理系统</p>
+		<button class="btn btn-default">sign in</button>
+		<button class="btn btn-default ">sign up</button>
+	</div>
+	<div class="row">
+		<div class="col-md-3">
+			<ul class="list-group">
+			 	<li class="list-group-item"><a href="#/home">最新消息</a></li>
+				<li class="list-group-item"><a href="#/student">学生信息</a> </li>
+				<li class="list-group-item"><a href="#/course">科目建设</a></li>
+			</ul>
+		</div>
+		<div class="col-md-8">
+			<ng-view></ng-view>
+		</div>
+	</div>
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular/angular-route.min.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/controller.js"></script>
+	<script src="js/service.js"></script>
+</body>
+</html>

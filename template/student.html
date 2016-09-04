@@ -1,0 +1,34 @@
+<h2>学生信息</h2>
+<table class="table table-bordered">
+	<thead>
+		<tr class="active">
+			<th>ID</th>
+			<th>Name</th>
+			<th>Gender</th>
+			<th>Course</th>
+			<th>operate</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="student in students"ng-hide="student.id == !editStudent.id">
+			<td><a href="#/student/{{student.id}}">{{student.id}}</a></td>
+			<td>{{student.name}}</td>
+			<td>{{student.gender}}</td>
+			<td>{{student.course}}</td>
+			<td>
+				<input type="button"class="btn btn-sm btn-warning"value="edit"ng-click="startEdit(student)">
+				<input type="button"class="btn btn-sm btn-danger"value="delete"ng-click="deleteStudent(student)">
+			</td>
+		</tr>
+		<tr ng-class="{danger:editStudent}">
+			<td><input type="text"ng-model="editStudent.id" required></td>
+			<td><input type="text"ng-model="editStudent.name" required></td>
+			<td><input type="text"ng-model="editStudent.gender" required></td>
+			<td><input type="text"ng-model="editStudent.course" required></td>
+			<td>
+				<input type="button" ng-hide="editStudent.id"ng-click="createStudent(editStudent)"class="btn btn-sm btn-primary"value="add">
+				<input type="button" ng-show="editStudent"ng-click="cancelEdit()"class="btn btn-sm btn-primary"value="cancel">
+			</td>
+		</tr>
+	</tbody>
+</table>
